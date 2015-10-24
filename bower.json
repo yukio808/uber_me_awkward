@@ -1,0 +1,20 @@
+{
+  "name": "uber_me_awkward",
+  "version": "1.0.0",
+  "homepage": "https://github.com/yukio808/uber_me_awkward",
+  "authors": [
+    "yukio yamamoto <aj.yamamoto@me.com>"
+  ],
+  "description": "Application for Devleague/Uber hackathon",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.5.3"
+  }
+}

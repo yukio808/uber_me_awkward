@@ -1,0 +1,33 @@
+{
+  "name": "uber_me_awkward",
+  "version": "1.0.0",
+  "description": "Application for devleague/Uber hackathon",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yukio808/uber_me_awkward.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yukio808/uber_me_awkward/issues"
+  },
+  "homepage": "https://github.com/yukio808/uber_me_awkward#readme",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "cookie-parser": "^1.4.0",
+    "express": "^4.13.3",
+    "express-session": "^1.11.3",
+    "gulp": "^3.9.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-nodemon": "^2.0.4",
+    "gulp-sass": "^2.0.4",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.2.2",
+    "passport": "^0.3.0",
+    "passport-local": "^1.0.0"
+  }
+}
