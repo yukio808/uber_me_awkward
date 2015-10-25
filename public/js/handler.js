@@ -7,7 +7,7 @@ $(function(){
       }
     ).done(function (data){
       if(data.popupUrl){
-        window.open(data.popupUrl);
+        window.location.replace(data.popupUrl);
       }
     });
     }
@@ -18,6 +18,13 @@ $(function(){
       }
     ).done(function (data){
       console.log(data);
+    });
+  });
+  $('button.products').on('click', function (){
+    $.post( '/api/products', {
+        source      : {lat: '21.2969690', lng: '-157.8565750'},
+      }).done(function (data){
+        data = JSON.parse(data);
     });
   });
 });
