@@ -37,6 +37,7 @@ var server = app.listen(localPort, function () {
   var host = '0.0.0.0'; //require("os").hostname();
   var port = server.address().port;
 
+
   //db.sequelize.sync();
 
   console.log('Application listening at http://%s:%s', host, port);

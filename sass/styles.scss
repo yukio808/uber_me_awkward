@@ -1,3 +1,13 @@
-body{
-  color: white;
+@import url(https://fonts.googleapis.com/css?family=Quicksand);
+body {
+	text-align: center;
+	background-color: #FFFFF0;
+}
+h1{
+	font-family: 'Quicksand', sans-serif;	
+
+	border: 2px dotted black;
+}
+p:hover{
+	color: blue;
 }

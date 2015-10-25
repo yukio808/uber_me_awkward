@@ -43,6 +43,16 @@ router.post('/products', function (req, res){
   });
 });
 
+router.get('/lynne', function (req, res){
+  res.render('sublime')
+
+});
+
+router.post('/lynnev', function (req, res){
+  console.log(req.body);
+  res.json({tofu:'string'});
+})
+
 router.get('/estimate/price', function (req, res){
   //Temporary lat long for dev puproses only depricate and use req from front end.
   var source = {lat: req.body.source.lat, lng: req.body.source.lng};
@@ -74,7 +84,6 @@ var source = {lat: req.body.source.lat, lng: req.body.source.lng};
 var destination = {lat: req.body.destination.lat, lng: req.body.destination.lng};
  // tripler army med center
   var product_id = req.body.product_id;
-  console.log(req);
 
   if( !req.body.hasOwnProperty('auth_token') ){ // handler for surge pricing
     return res.json({
@@ -104,6 +113,7 @@ var destination = {lat: req.body.destination.lat, lng: req.body.destination.lng}
       return res.json(err);
     }
     body.success = true;
+    console.log('body', body);
     res.json(body);
   });
 
