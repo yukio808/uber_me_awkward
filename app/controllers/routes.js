@@ -119,15 +119,13 @@ var destination = {lat: req.body.destination.lat, lng: req.body.destination.lng}
 
 });
 
-router.post('/request_ride/status', function (req, res){
-
+router.get('/status', function (req, res){
+  console.log(req.body.request_id)
   var uberStatus = {
     request_id : req.body.request_id
   }
-  request.post({
+  request.get({
     url : uberApiUrl + 'requests/' + req.body.request_id,
-    json : uberStatus,
-    strictSSL : false,
     auth : {
       bearer : req.body.auth_token
     }
@@ -135,7 +133,6 @@ router.post('/request_ride/status', function (req, res){
     if (err) {
       res.json(err)
     };
-    body.success = true;
     console.log('body', body)
     res.json(body);
   })

@@ -33,7 +33,7 @@ $(function(){
     });
   };
   function checkStatus (data){
-    $.post('/api/request_ride/status', {
+    $.get('/api/status', {
         request_id  : data.request_id,
         auth_token  : localStorage.auth_token,
       }
