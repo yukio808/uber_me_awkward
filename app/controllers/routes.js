@@ -23,6 +23,15 @@ router.get('/', function (req, res){
  res.render('index');
 });
 
+router.get('/lynne', function (req, res){
+  res.render('sublime');
+});
+
+router.post('/lynnev', function (req, res){
+  console.log(req.body);
+  res.json({tofu:'string'});
+})
+
 router.get('/estimate/price', function (req, res){
   //Temporary lat long for dev puproses only depricate and use req from front end.
   var source = {lat: '21.2969690', lng: '-157.8565750'};
