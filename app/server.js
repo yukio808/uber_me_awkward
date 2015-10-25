@@ -30,6 +30,10 @@ app.get('/', function (req, res) {
   res.redirect('/api');
 });
 
+app.get('/shake', function(req, res) {
+  res.render('index');
+});
+
 // Starting server
 
 var server = app.listen(localPort, function () {
