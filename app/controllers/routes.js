@@ -21,13 +21,32 @@ var oauth2 = new OAuth2(
 // Get: Ride estimate URL
 //
 router.get('/', function (req, res){
- res.render('index');
+  res.render('index');
+});
+
+router.post('/products', function (req, res){
+  console.log(req.body, 'this ');
+  var source = {lat: req.body.source.lat, lng: req.body.source.lng};
+  request.get({
+    url: uberApiUrl + 'products',
+    strictSSL: false,
+    qs: {
+      server_token : uberServerToken,
+      latitude  : source.lat,
+      longitude : source.lng,
+    }
+  }, function (err, response, body){
+    if(err){
+      res.json(err);
+    }
+    res.json(body);
+  });
 });
 
 router.get('/estimate/price', function (req, res){
   //Temporary lat long for dev puproses only depricate and use req from front end.
-  var source = {lat: '21.2969690', lng: '-157.8565750'};
-  var destination = {lat: '21.3607130', lng: '-157.8887950'};
+  var source = {lat: req.body.source.lat, lng: req.body.source.lng};
+  var destination = {lat: req.body.destination.lat, lng: req.body.destination.lng};
 
   request.get({
     url : uberApiUrl + 'estimates/price',
@@ -51,9 +70,10 @@ router.get('/estimate/price', function (req, res){
 // Post: Request Ride
 //
 router.post('/request_ride', function (req, res){
-  var source = {lat: '21.2969690', lng: '-157.8565750'}; // box jelly
-  var destination = {lat: '21.3607130', lng: '-157.8887950'}; // tripler army med center
-  var product_id = '';
+var source = {lat: req.body.source.lat, lng: req.body.source.lng};
+var destination = {lat: req.body.destination.lat, lng: req.body.destination.lng};
+ // tripler army med center
+  var product_id = req.body.product_id;
   console.log(req);
 
   if( !req.body.hasOwnProperty('auth_token') ){ // handler for surge pricing
@@ -132,5 +152,7 @@ function getAuthorizeUrl(){
   });
 }
 
-//
+// add database code here
+
+
 module.exports = router;

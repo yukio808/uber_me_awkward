@@ -27,7 +27,6 @@ gulp.task('watch', function () {
   //listen for live reload 
   refresh.listen(livereloadport);
   gulp.watch('./sass/**/*.scss', ['sass']);
-  //live reload for jade template changes or static assets change
   gulp.watch([
     './public/**/*',
     'views/**/*.html'], refresh.changed);

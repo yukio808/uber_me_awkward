@@ -7,8 +7,8 @@ This is an app that books an uber ride to come pick you up at your location whic
 - Save Rescue Location to DB
 - Sends / Recieves Request and Response to Server
 
-##Environment setup
-###Server
+## Environment setup
+### Server
 - Express
 
 ### Database
