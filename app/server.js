@@ -12,7 +12,7 @@ var ejs            = require('ejs');
 //==========================================================
 app.use(session({ secret: 'keyboard cat',   resave: false,
   saveUninitialized: true }));
-//dependancy use for main services and addons 
+//dependancy use for main services and addons
 app.set('views', path.join(__dirname, 'views'));
 app.engine('.html', require('ejs').renderFile);
 app.set('view engine', 'html');
@@ -26,11 +26,15 @@ app.use('/api', routes);
 app.get('/', function (req, res){
   res.redirect('/api');
 });
+
+app.get('/shake', function(req, res) {
+  res.render('index');
+});
 // Starting server
 
 var server = app.listen(localPort, function () {
 
-  var host = require("os").hostname();
+  var host = '0.0.0.0'; //require("os").hostname();
   var port = server.address().port;
 
   console.log('Application listening at http://%s:%s', host, port);
