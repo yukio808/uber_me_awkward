@@ -119,6 +119,28 @@ var destination = {lat: req.body.destination.lat, lng: req.body.destination.lng}
 
 });
 
+router.post('/request_ride/status', function (req, res){
+
+  var uberStatus = {
+    request_id : req.body.request_id
+  }
+  request.post({
+    url : uberApiUrl + 'requests/' + req.body.request_id,
+    json : uberStatus,
+    strictSSL : false,
+    auth : {
+      bearer : req.body.auth_token
+    }
+  }, function (err, response, body){
+    if (err) {
+      res.json(err)
+    };
+    body.success = true;
+    console.log('body', body)
+    res.json(body);
+  })
+})
+
 router.get('/oauth/cb', function(req, res){
   var code = req.query.code;
   oauth2.getOAuthAccessToken(

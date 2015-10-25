@@ -18,8 +18,8 @@ $(function(){
         product_id  : $('option:selected').val()
       }
     ).done(function(data) {
-      console.log(data)
-    })
+      checkStatus(data);
+    });
     
   });
   function getProduct () {
@@ -32,5 +32,14 @@ $(function(){
         };
     });
   };
+  function checkStatus (data){
+    $.post('/api/request_ride/status', {
+        request_id  : data.request_id,
+        auth_token  : localStorage.auth_token,
+      }
+    ).done(function(data) {
+      console.log(data) // do the shaking api
+    })
+  }
   getProduct();
 });
