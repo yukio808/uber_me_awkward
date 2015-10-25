@@ -30,10 +30,10 @@ INSERT INTO request_ride (
   password)
 VALUES(
   '821415d8-3bd5-4e27-9604-194e4359a449',
-  34.232,
-  234.45,
-  48.321,
-  218.32,
+  21.296890,
+  -157.856608,
+  21.308650,
+  -157.808712,
   'uberuser@gmail.com',
   '1234password'
   );
