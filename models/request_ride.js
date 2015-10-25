@@ -1,13 +1,17 @@
 module.exports = function(sequelize, DataTypes) {
-  var Task = sequelize.define("Task", {
-    title: DataTypes.STRING
+  var RequestRide = sequelize.define("RequestRide", {
+    product_id : DataTypes.CHAR(36),
+    start_latitude : DataTypes.DECIMAL(10, 6),
+    end_latitude : DataTypes.DECIMAL(10, 6),
+    start_longitude : DataTypes.DECIMAL(10, 6),
+    end_longitude : DataTypes.DECIMAL(10, 6),
+    access_token : DataTypes.TEXT
   }, {
-    classMethods: {
-      associate: function(models) {
-        Task.belongsTo(models.User);
-      }
+    tableName : "request_ride",
+    underscored : true,
+    classMethods : {
     }
   });
 
-  return Task;
+  return RequestRide;
 };

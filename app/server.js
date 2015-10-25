@@ -10,6 +10,8 @@ var localPort      = process.env.PORT || 8080;
 var routes         = require('./controllers/routes');
 var ejs            = require('ejs');
 var db             = require('../models');
+
+// var User = db.User;
 //==========================================================
 app.use(session({ secret: 'keyboard cat',   resave: false,
   saveUninitialized: true }));
@@ -27,6 +29,20 @@ app.use('/api', routes);
 app.get('/', function (req, res) {
   res.redirect('/api');
 });
+
+// app.post('/users', function (req, res) {
+//   User.create({ username: req.body.username })
+//     .then(function (user) {
+//       res.json(user);
+//     });
+// });
+
+// app.get('/users', function(req, res) {
+//   User.findAll()
+//     .then(function (users) {
+//       res.json(users);
+//     });
+// });
 // Starting server
 
 var server = app.listen(localPort, function () {

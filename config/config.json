@@ -1,21 +1,21 @@
 {
   "development": {
-    "username": "uber_me_awkward",
-    "password": 1,
-    "database": "db_uber_me_awkward",
+    "username": "StyeL",
+    "password": "styel",
+    "database": "uber_me_awkward",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "username": "uber_me_awkward",
-    "password": 1,
+    "username": "StyeL",
+    "password": "styel",
     "database": "db_uber_me_awkward",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
-    "username": "uber_me_awkward",
-    "password": 1,
+    "username": "StyeL",
+    "password": "styel",
     "database": "db_uber_me_awkward",
     "host": "127.0.0.1",
     "dialect": "postgres"

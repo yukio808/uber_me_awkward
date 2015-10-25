@@ -15,13 +15,17 @@ if (config.use_env_variable) {
 }
 
 fs
+  // reads the directory
   .readdirSync(__dirname)
+  // filters out hidden files and index.js
   .filter(function(file) {
     return (file.indexOf('.') !== 0) && (file !== basename);
   })
+  // for every .js file
   .forEach(function(file) {
     if (file.slice(-3) !== '.js') return;
     var model = sequelize['import'](path.join(__dirname, file));
+    // creates a model
     db[model.name] = model;
   });
 
@@ -31,7 +35,9 @@ Object.keys(db).forEach(function(modelName) {
   }
 });
 
+// sequelize connection
 db.sequelize = sequelize;
+// sequelize helpers and datatypes
 db.Sequelize = Sequelize;
 
 module.exports = db;
