@@ -50,8 +50,12 @@
       }
 
       info = maxZ;
-      console.log(acceleration, info);
-      document.getElementById("moAccel").innerHTML = info;
+
+      if (maxZ > 15) {
+        console.log(acceleration, info);
+        document.getElementById("moAccel").innerHTML = info;
+      }
+
     }
 
     function round(val) {
