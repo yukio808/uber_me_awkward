@@ -11,32 +11,31 @@
 		<br><br><br>
 		<img id = "uber" src="/images/uber.png">
 		<h1>UberMeAwkward</h1>
-		<form action="/api/lynnev" method = 'post'>
+		<form>
 			Enter Start Address: <input type="text" name="Starting Address" value=""><br><br>
 			Enter End Address: <input type = "text" name = "End Address" value = ""><br><br>
-			<select name = "ubertypes" form = "typesform">
-  				<option class = "userselected" id = "1" value="uberX">uberX</option>
-  				<option class = "userselected" id = "2" value="uberXL">uberXL</option>
-  				<option class = "userselected" id = "3" value="uberSelect">uberSelect</option>
-  				<option class = "userselected" id = "4" value="uberPOOL">uberPOOL</option>
-  				<option class = "userselected" id = "5" value="uberBLACK">uberBLACK (Black Car)</option>
+			<select name="ubertypes">
+  				
 			</select>
-			<input type="submit" value="Submit">
+			<button name="init">Submit Ride</button>
 		</form>
 			<br><br><br><br><br>
 			<p><u>Help</p>
 			<div style="height:50px; background-color: #B0E2FF"/div>
 		<script type="text/javascript">
-			var list = document.getElementsByClassName("ubertype")[0];
-			list.getElementsByClassName("ubertypes")[0].innerHTML = "1";
-			var list = document.getElementsByClassName("ubertype")[1];
-			list.getElementsByClassName("ubertypes")[1].innerHTML = "2";
-			var list = document.getElementsByClassName("ubertype")[2];
-			list.getElementsByClassName("ubertypes")[2].innerHTML = "3";
-			var list = document.getElementsByClassName("ubertype")[3];
-			list.getElementsByClassName("ubertypes")[3].innerHTML = "4";
-			var list = document.getElementsByClassName("ubertype")[4];
-			list.getElementsByClassName("ubertypes")[4].innerHTML = "5";
+			// var list = document.getElementsByClassName("ubertype")[0];
+			// list.getElementsByClassName("ubertypes")[0].innerHTML = "1";
+			// var list = document.getElementsByClassName("ubertype")[1];
+			// list.getElementsByClassName("ubertypes")[1].innerHTML = "2";
+			// var list = document.getElementsByClassName("ubertype")[2];
+			// list.getElementsByClassName("ubertypes")[2].innerHTML = "3";
+			// var list = document.getElementsByClassName("ubertype")[3];
+			// list.getElementsByClassName("ubertypes")[3].innerHTML = "4";
+			// var list = document.getElementsByClassName("ubertype")[4];
+			// list.getElementsByClassName("ubertypes")[4].innerHTML = "5";
 		</script>
+		<script type='text/javascript', src='http://code.jquery.com/jquery-1.10.2.min.js'>
+		</script>
+  <script type="text/javascript", src="/js/handler.js"></script>
 	</body>
 </html>

@@ -84,9 +84,7 @@ router.post('/request_ride', function (req, res){
 var source = {lat: req.body.source.lat, lng: req.body.source.lng};
 var destination = {lat: req.body.destination.lat, lng: req.body.destination.lng};
  // tripler army med center
-  var product_id = '';
-  console.log(req);
-
+  var product_id = req.body.product_id;
   if( !req.body.hasOwnProperty('auth_token') ){ // handler for surge pricing
     return res.json({
       success : false,
@@ -115,6 +113,7 @@ var destination = {lat: req.body.destination.lat, lng: req.body.destination.lng}
       return res.json(err);
     }
     body.success = true;
+    console.log('body', body);
     res.json(body);
   });
 
