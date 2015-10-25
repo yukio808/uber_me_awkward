@@ -25,7 +25,16 @@ router.get('/', function (req, res){
 });
 
 router.get('/lynne', function (req, res){
+<<<<<<< HEAD
   res.render('sublime')
+=======
+  res.render('sublime');
+});
+
+router.post('/lynnev', function (req, res){
+  console.log(req.body);
+  res.json({tofu:'string'});
+>>>>>>> origin
 })
 
 router.get('/estimate/price', function (req, res){
