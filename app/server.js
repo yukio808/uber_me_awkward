@@ -9,6 +9,7 @@ var path           = require('path');
 var localPort      = process.env.PORT || 8080;
 var routes         = require('./controllers/routes');
 var ejs            = require('ejs');
+var db             = require('../models');
 //==========================================================
 app.use(session({ secret: 'keyboard cat',   resave: false,
   saveUninitialized: true }));
@@ -32,6 +33,8 @@ var server = app.listen(localPort, function () {
 
   var host = require("os").hostname();
   var port = server.address().port;
+
+  db.sequelize.sync();
 
   console.log('Application listening at http://%s:%s', host, port);
 
