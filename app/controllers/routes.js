@@ -39,7 +39,6 @@ router.post('/products', function (req, res){
     if(err){
       res.json(err);
     }
-    console.log('body',body);
     res.json(body);
   });
 });
@@ -74,7 +73,7 @@ router.post('/request_ride', function (req, res){
 var source = {lat: req.body.source.lat, lng: req.body.source.lng};
 var destination = {lat: req.body.destination.lat, lng: req.body.destination.lng};
  // tripler army med center
-  var product_id = '';
+  var product_id = req.body.product_id;
   console.log(req);
 
   if( !req.body.hasOwnProperty('auth_token') ){ // handler for surge pricing
