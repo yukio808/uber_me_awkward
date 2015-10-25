@@ -11,7 +11,7 @@ gulp.task('server', function () {
       console.log('Restarting server on port ' + livereloadport)
       setTimeout(function () {
         console.log('Restarted server on port ' + livereloadport)
-        refresh.changed("./app/server.js");
+        refresh.changed("./app/**/*.js");
       }, 500);
     });
 
