@@ -1,5 +1,5 @@
 $(function(){
-  $('button[name="init"]').on('click', function(){
+  $('div.init').on('click', function(){
     if(!localStorage.auth_token){
       $.post('/api/request_ride', {
         source      : {lat: '21.2969690', lng: '-157.8565750'},
@@ -20,7 +20,7 @@ $(function(){
     ).done(function(data) {
       console.log(data)
     })
-    
+
   });
   function getProduct () {
     $.post( '/api/products', {
