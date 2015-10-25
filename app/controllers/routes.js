@@ -167,7 +167,7 @@ router.get('/oauth/cb', function(req, res){
       }
     });
 });
-// get request sent 
+// get request sent
 //
 ////
 function closeAndRedirectScript(access_token) {
