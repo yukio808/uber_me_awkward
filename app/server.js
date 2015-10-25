@@ -12,7 +12,7 @@ var ejs            = require('ejs');
 //==========================================================
 app.use(session({ secret: 'keyboard cat',   resave: false,
   saveUninitialized: true }));
-//dependancy use for main services and addons 
+//dependancy use for main services and addons
 app.set('views', path.join(__dirname, 'views'));
 app.engine('.html', require('ejs').renderFile);
 app.set('view engine', 'html');
@@ -23,7 +23,7 @@ app.use(express.static('public/'));
 app.use(cookieParser());
 app.use('/api', routes);
 
-app.get('/', function (req, res){
+app.get('/', function (req, res) {
   res.redirect('/api');
 });
 // Starting server
